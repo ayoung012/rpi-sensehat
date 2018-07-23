@@ -18,13 +18,14 @@ def get_ip_address(ifname):
 print(get_ip_address('wlan0'))
 
 s = SenseHat()
+white = (100,100,100)
 
 ip = get_ip_address('wlan0').split(".")
 
 for i in range(0,10):
     count = 0
     for c in ip[3]:
-        s.show_letter(c)
+        s.show_letter(c, white)
         if count is 0:
             s.set_pixel(7,7, 100,100,100)
         count+=1
