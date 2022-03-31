@@ -18,6 +18,7 @@ def get_ip_address(ifname):
 print(get_ip_address('wlan0'))
 
 s = SenseHat()
+s.rotation = 270
 white = (100,100,100)
 
 ip = get_ip_address('wlan0').split(".")
@@ -32,3 +33,5 @@ for i in range(0,10):
         sleep(1)
         s.clear()
         sleep(0.1)
+    # Pause longer after each loop
+    sleep(0.2)
